@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Tap Tap Tap - Open source tapping game built with Javascript</title>
+	<title>PUMPWIN - Open source tapping game built with Javascript</title>
 	<meta name="description" content="Open source tapping game built with Javascript"/>
 	<link href="style.css" rel="stylesheet">
 	<meta charset="UTF-8">
@@ -42,7 +42,7 @@
 </head>
 <body ontouchstart="">
 
-	<div class="admin-cp">
+	 <div class="admin-cp">
 		<button class="admin-cp-button" type="button" name="button">Hide / Show Panel</button>
 		<div class="admin-cp-items hidden">
 			<label class="vzbltyLabel" for="splashPageToggle">
@@ -84,9 +84,10 @@
 		<!-- SPLASH/LOADING PAGE -->
 		<div id="pageSplash" class="page-cont page-splash page-faded-bg">
 			<div class="fixed-75w-wrapper">
+        <!-- <img src="/images/pumpwin-logo.png" height="100"/> -->
 				<div id="splashScreenLogo" class="tpbl-circle c-white splash-screen-logo"></div>
 				<div id="splashScreenTxt">
-					Loading AWESOME STUFF
+					PUMPWIN
 				</div>
 			</div>
 		</div>
@@ -96,10 +97,10 @@
 			<div class="fixed-75w-wrapper">
 				<div class="gm-menu-header-cont">
 					<div class="tpbl-circle c-blue gm-menu-logo-bg"></div>
-					<h1 class="gm-menu-title">Tap Tap Tap</h1>
-					<h2 class="gm-menu-subtitle">Every Tap Matters</h2>
+					<h1 class="gm-menu-title">PUMPWIN</h1>
+					<h2 class="gm-menu-subtitle">PUMP your WIN</h2>
 				</div>
-				<button id="newGameBtn" class="gm-btn btn-blue" type="button" name="button">New Game</button>
+				<button id="newGameBtn" class="gm-btn btn-blue" type="button" name="button">JOIN PUMP</button>
 				<button id="highScoresBtn" class="gm-btn" type="button" name="button">Best Score</button>
 				<button id="aboutBtn" class="gm-btn" type="button" name="button">About</button>
 			</div>
@@ -156,7 +157,7 @@
 			<div class="fixed-100w-wrapper">
 				<div id="tutPgStartGameBtn" class="tpbl-circle c-blue tut-circle"></div>
 				<div class="tut-arrow"></div>
-				<h2 class="tut-text">TAP THE CIRCLE<br/>TO START</h2>
+				<h2 class="tut-text">TAP THE PUMPKIN</h2>
 			</div>
 		</div>
 
@@ -180,22 +181,24 @@
 				<div class="gm-stats-wrapper">
 					<!-- pause button -->
 					<div class="gm-stats-vcont">
-						<button id="gmStatsPauseBtn" class="gm-stats-pause-button"></button>
+						<button id="gmStatsPauseBtn" class="gm-stats-pause-button">
+              <svg fill-rule="evenodd" viewBox="64 64 896 896" focusable="false" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"></path></svg>
+            </button>
 					</div>
 					<!-- score -->
 					<div class="gm-stats-vcont">
 						<div class="stat-wrapper">
-							<div class="gm-stats-title">Score</div>
+							<div class="gm-stats-title">PUMPED UP</div>
 							<div id="gmStatsScore" class="gm-stats-value">2894</div>
 						</div>
 					</div>
 					<!-- level number -->
 					<div class="gm-stats-vcont">
 						<div class="stat-wrapper text-align-right">
-							<div id="gmStatsLvlNumb" class="gm-stats-title">Level 7</div>
+							<div id="gmStatsLvlNumb" class="gm-stats-title">total</div>
 							<div class="gm-stats-value">
 								<span id="gmStatsCurrentTapCount" class="gm-stats-tap-count">16</span>
-								<span id="gmStatsTotalTapCount">/20</span>
+								<span id="gmStatsTotalTapCount"></span>
 							</div>
 						</div>
 					</div>

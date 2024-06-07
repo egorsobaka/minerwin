@@ -60,7 +60,7 @@ hr {
 }
 
 .main-wrapper {
-  background: url('images/backgroundPattern.svg') repeat rgb(11, 29, 49);
+  /* background: url('images/backgroundPattern.svg') repeat rgb(11, 29, 49); */
   width: 100%;
   max-width: 640px;
   height: 640px;
@@ -230,8 +230,10 @@ hr {
   width: 44px;
   height: 100%;
   border: none;
-  background: url('images/pauseIconSmall.svg') center no-repeat;
+  /* background: url('images/pauseIconSmall.svg') center no-repeat; */
   float: left;
+  background: transparent;
+  color: white;
 }
 .gm-stats-pause-button:active {
   transform: scale(2);
@@ -304,15 +306,15 @@ hr {
 }
 
 .c-blue {
-  box-shadow: inset 0 0 0 17px #58D1FF;
+  /* box-shadow: inset 0 0 0 17px #58D1FF; */
   z-index: 3;
 }
 .c-blue::before, .c-blue::after {
-  box-shadow: inset 0 0 0 2px #58D1FF;
+  box-shadow: inset 0 0 0 2px #ffd058;
 }
 
 .c-red {
-  box-shadow: inset 0 0 0 17px #FA4760;
+  /* box-shadow: inset 0 0 0 17px #FA4760; */
   z-index: 2;
 }
 .c-red::before, .c-red::after {
@@ -320,10 +322,10 @@ hr {
 }
 
 .c-white {
-  box-shadow: inset 0 0 0 17px #ffffff;
+  /* box-shadow: inset 0 0 0 17px #ffffff; */
 }
 .c-white::before, .c-white::after {
-  box-shadow: inset 0 0 0 2px #ffffff;
+  box-shadow: inset 0 0 0 2px #a74204;
 }
 
 .sbmt-tryagain-txt {
@@ -342,20 +344,34 @@ hr {
   background: rgba(0,0,0,0.5);
 }
 
+.good-circle {
+  background-image: url(/images/pumpwin-logo-1.png);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.evil-circle {
+  background-image: url(/images/pumpwin-logo-1.png);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* -------- Splash Screen -------- */
 .splash-screen-logo {
   position: relative;
   margin: 0 auto 1.5em;
   width: 3.5em;
   height: 3.5em;
-  box-shadow: inset 0 0 0 1.4em;
+  /* box-shadow: inset 0 0 0 1.4em; */
 }
 
 
 /*  -------- Game menu page -------- */
 
 .page-game-menu {
-  background: url('images/backgroundPattern.svg') repeat rgb(11, 29, 49);
+  /* background: url('images/backgroundPattern.svg') repeat rgb(11, 29, 49); */
 }
 
 .gm-menu-header-cont {
@@ -369,16 +385,17 @@ hr {
   margin: 0 auto 1.5em;
   width: 3.5em;
   height: 3.5em;
-  box-shadow: inset 0 0 0 1.4em #58D1FF;
+  /* box-shadow: inset 0 0 0 1.4em #58D1FF; */
 }
 
 .gm-menu-logo-bg::before, .gm-menu-logo-bg::after {
-  box-shadow: inset 0 0 0 2px #58D1FF;
+  /* box-shadow: inset 0 0 0 2px #58D1FF; */
 }
 
 .gm-menu-title, .gm-menu-subtitle {
   text-align: center;
   width: 100%;
+  color: #ffb858;
 }
 .gm-menu-title {
   font-size: 1.45454545454545em;
@@ -424,7 +441,7 @@ hr {
 
 /* Game Tutorial page */
 .page-tutorial {
-  background: url('images/backgroundPattern.svg') repeat rgb(11, 29, 49);
+  /* background: url('images/backgroundPattern.svg') repeat rgb(11, 29, 49); */
   position: relative;
 }
 
@@ -785,4 +802,23 @@ hr {
   body {
     font-size: 1.6rem;
   }
+}
+
+.splash-screen-logo,
+.gm-menu-logo-bg,
+#tutPgStartGameBtn,
+#lvlLostTryAgainBtn {
+  background-image: url(/images/pumpwin-logo-1.png);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+}
+
+#highScoresBtn {
+  display: none;
+}
+
+.gm-menu-logo-bg{
+  width: 10em;
+  height: 10em;
 }

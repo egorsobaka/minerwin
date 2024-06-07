@@ -13,6 +13,8 @@ function disconnect() {
   socket.disconnect();
 }
 
+const LEVEL_TIME = 10;
+
 // ===============================================================
 // ================== SHOW/HIDE PAGES - ADMIN ====================
 // ===============================================================
@@ -407,7 +409,7 @@ var circlesEngine = {
       // recreate evil circles if there are any in the game space
       circlesEngine.add(".evil-circle", evilCircles.length);
     }
-    socket.emit("tap", {user: "egor"});
+    socket.emit("tap", {user: "egor", amount: 1});
   },
   evilCircleTap: function () {
     gameEngine.evilCircleTap();
@@ -424,10 +426,10 @@ var circlesEngine = {
 var gameEngine = {
   // Current level settings
   levelNum: 1, // current level number
-  levelTime: 10, // Time in seconds for the current level
+  levelTime: 100, // Time in seconds for the current level
   tapNum: 0, // how many times it was tapped so far
   tapsGoal: 10, // Number of taps required to finish the level
-  tapValue: 13, // How much does the tap add to the score
+  tapValue: 1, // How much does the tap add to the score
   score: 0, // current score <- should be carried from a level to another
   goodCirclesCount: 1, // number of good circles in game space
   evilCirclesCount: 4,
@@ -441,14 +443,14 @@ var gameEngine = {
   updateLevel: function (levelNum) {
     // Update the level number in the game space and add to engine
     gameEngine.levelNum = levelNum;
-    gmStatsLvlNumb.innerHTML = "Level " + gameEngine.levelNum;
+    // gmStatsLvlNumb.innerHTML = "Level " + gameEngine.levelNum;
   },
   updateTapCount: function (tapNum, tapsGoal) {
     // Update tabs count in the game space & add to engine
     gameEngine.tapNum = tapNum;
     gmStatsCurrentTapCount.innerHTML = gameEngine.tapNum;
     gameEngine.tapsGoal = tapsGoal;
-    gmStatsTotalTapCount.innerHTML = "/" + gameEngine.tapsGoal;
+    // gmStatsTotalTapCount.innerHTML = "/" + gameEngine.tapsGoal;
   },
   updateLevelTime: function (time) {
     gameEngine.levelTime = time;
@@ -591,11 +593,11 @@ var gameEngine = {
     levelsEngine.addNewLevel(
       // add new level to the levels engine
       gameEngine.levelNum,
-      gameEngine.levelTime + 1,
-      gameEngine.tapValue + 2,
-      gameEngine.tapsGoal + 1,
+      gameEngine.levelTime,
+      gameEngine.tapValue,
+      gameEngine.tapsGoal,
       1, // good circles count
-      gameEngine.evilCirclesCount + 1
+      gameEngine.evilCirclesCount
     );
 
     toolsBox.hidePage(pagePlayArea);
@@ -629,8 +631,8 @@ let levelsEngine = {
   levels: [
     {
       levelNum: 1,
-      time: 7, // Time in seconds for the current level
-      tapValue: 3,
+      time: 100, // Time in seconds for the current level
+      tapValue: 1,
       tapsGoal: 5,
       goodCirclesCount: 1,
       evilCirclesCount: 4,
@@ -649,7 +651,7 @@ let levelsEngine = {
   resetLevels: function () {
     // TODO
     levelsEngine.levels = [];
-    levelsEngine.addNewLevel(1, 7, 3, 5, 1, 4);
+    levelsEngine.addNewLevel(1, LEVEL_TIME, 1, 1000, 1, 4);
   },
 };
 
@@ -795,10 +797,13 @@ lvlLostTryAgainBtn.addEventListener(
 // -- Pause game button
 toolsBox.onClickNTouchstart(gmStatsPauseBtn, function () {
   // audioPool.playSound(buttonTap);
-  gameEngine.pause();
-  toolsBox.showPage(pagePauseMenu);
-  toolsBox.hidePage(pagePlayArea);
-  lvlPausedScore.innerHTML = gameEngine.score;
+  // gameEngine.pause();
+  // toolsBox.showPage(pagePauseMenu);
+  // toolsBox.hidePage(pagePlayArea);
+  // lvlPausedScore.innerHTML = gameEngine.score;
+  gameEngine.stop();
+  toolsBox.showPage(pageGameMenu);
+
 });
 
 // Pause Menue Buttons
